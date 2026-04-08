@@ -141,6 +141,13 @@ export default function Home() {
     setSongs((prev) => prev.filter((_, index) => index !== indexToRemove));
   }
 
+  function clearSongs() {
+    setSongs([]);
+    setSongInput("");
+    setResult(null);
+    setError("");
+  }
+
   function quitSession() {
     setSongInput("");
     setSongs([]);
@@ -198,6 +205,12 @@ export default function Home() {
           <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="text-2xl font-semibold text-white">Dashboard</h2>
             <div className="flex items-center gap-2">
+              <button
+                onClick={clearSongs}
+                className="rounded-xl border border-white/20 bg-black px-3 py-2 text-xs font-medium text-white/70 transition duration-200 hover:border-[#FF6A1A] hover:bg-[#1a0b03] hover:text-[#ff8f52] active:bg-[#120802]"
+              >
+                Tout retirer
+              </button>
               <button
                 onClick={quitSession}
                 className="rounded-xl border border-[#FF6A1A] bg-black px-3 py-2 text-xs font-semibold text-[#FF6A1A] transition duration-200 hover:bg-[#1a0b03] hover:text-[#ff8f52] hover:shadow-[0_8px_24px_rgba(255,106,26,0.25)] active:bg-[#120802]"
