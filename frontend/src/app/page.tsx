@@ -29,9 +29,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<AnalysisResponse | null>(null);
-  const [songs, setSongs] = useState<string[]>(DEFAULT_SONGS);
+  const [songs, setSongs] = useState<string[]>([]);
   const [songInput, setSongInput] = useState("");
-  const [maxSongs, setMaxSongs] = useState<5 | 10 | 15>(10);
+  const [maxSongs, setMaxSongs] = useState<5 | 10 | 15>(5);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const gaugeValue = useMemo(() => {
@@ -147,7 +147,7 @@ export default function Home() {
 
   function quitSession() {
     setSongInput("");
-    setSongs(DEFAULT_SONGS);
+    setSongs([]);
     setResult(null);
     setError("");
     setLoading(false);
