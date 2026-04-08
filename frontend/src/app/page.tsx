@@ -2,6 +2,11 @@
 
 import { Gauge, Music2, Sparkles, WandSparkles } from "lucide-react";
 import { useMemo, useState } from "react";
+import {
+  DEFAULT_SONGS,
+  EXTRA_KNOWN_ARTISTS,
+  SONG_CATALOG,
+} from "@/data/musicCatalog";
 
 type AnalysisResponse = {
   genre_dominant: string;
@@ -9,83 +14,11 @@ type AnalysisResponse = {
   similar_artists: string[];
 };
 
-const DEFAULT_SONGS = [
-  "Nirvana - Smells Like Teen Spirit",
-  "Linkin Park - Numb",
-  "Nina Simone - Feeling Good",
-  "Arctic Monkeys - Do I Wanna Know?",
-  "Kendrick Lamar - HUMBLE.",
-  "Daft Punk - Instant Crush",
-];
-
-const SONG_CATALOG = [
-  ...DEFAULT_SONGS,
-  "The Weeknd - Blinding Lights",
-  "Billie Eilish - bad guy",
-  "Radiohead - Creep",
-  "Coldplay - Viva La Vida",
-  "The Beatles - Come Together",
-  "Queen - Bohemian Rhapsody",
-  "Amy Winehouse - Back to Black",
-  "Eminem - Lose Yourself",
-  "Lana Del Rey - Summertime Sadness",
-  "Drake - One Dance",
-  "Lady Gaga - Just Dance",
-  "Rihanna - Diamonds",
-  "Adele - Rolling in the Deep",
-  "Taylor Swift - Blank Space",
-  "Bruno Mars - Locked Out of Heaven",
-  "Dua Lipa - Levitating",
-  "Imagine Dragons - Believer",
-  "Ed Sheeran - Shape of You",
-  "Sia - Chandelier",
-  "M83 - Midnight City",
-  "Red Hot Chili Peppers - Californication",
-  "The Strokes - Reptilia",
-  "Oasis - Wonderwall",
-  "Muse - Starlight",
-  "Gorillaz - Feel Good Inc.",
-  "Travis Scott - SICKO MODE",
-  "Post Malone - Circles",
-  "Kanye West - Stronger",
-  "Frank Ocean - Thinkin Bout You",
-  "Tyler, The Creator - EARFQUAKE",
-  "Childish Gambino - Redbone",
-  "SZA - Kill Bill",
-  "Harry Styles - As It Was",
-  "Phoenix - Lisztomania",
-  "The Killers - Mr. Brightside",
-  "Lorde - Royals",
-  "Bon Iver - Holocene",
-  "Fleetwood Mac - Dreams",
-  "Michael Jackson - Billie Jean",
-  "Madonna - Like a Prayer",
-  "David Bowie - Heroes",
-  "Blur - Song 2",
-  "Paramore - Misery Business",
-  "Green Day - Basket Case",
-  "The Cranberries - Zombie",
-  "Foo Fighters - Everlong",
-  "System Of A Down - Toxicity",
-];
 const MAX_SUGGESTIONS = 8;
 
 const KNOWN_ARTISTS = Array.from(
   new Set(SONG_CATALOG.map((entry) => entry.split(" - ")[0].trim().toLowerCase())),
 );
-
-const EXTRA_KNOWN_ARTISTS = [
-  "lady gaga",
-  "rihanna",
-  "adele",
-  "beyonce",
-  "dua lipa",
-  "ed sheeran",
-  "bruno mars",
-  "taylor swift",
-  "imagine dragons",
-  "the weeknd",
-];
 
 const ARTIST_DICTIONARY = new Set([...KNOWN_ARTISTS, ...EXTRA_KNOWN_ARTISTS]);
 const API_BASE_URL =
