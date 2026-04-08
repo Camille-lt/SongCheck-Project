@@ -290,7 +290,7 @@ export default function Home() {
             className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#FF6A1A] bg-[#FF6A1A] px-4 py-3 text-sm font-semibold text-black shadow-[0_0_0_rgba(255,106,26,0)] transition duration-200 hover:bg-[#ff7a33] hover:shadow-[0_10px_24px_rgba(255,106,26,0.35)] active:bg-[#e65b10] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#FF6A1A] disabled:hover:shadow-none"
           >
             <Sparkles size={16} />
-            {loading ? "Analyse en cours..." : "Relancer l'analyse"}
+            {loading ? "Analyse en cours..." : "Lancez l'analyse"}
           </button>
         </section>
 
