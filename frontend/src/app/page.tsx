@@ -2,11 +2,7 @@
 
 import { Gauge, Music2, Sparkles, WandSparkles } from "lucide-react";
 import { useMemo, useState } from "react";
-import {
-  DEFAULT_SONGS,
-  EXTRA_KNOWN_ARTISTS,
-  SONG_CATALOG,
-} from "@/data/musicCatalog";
+import { EXTRA_KNOWN_ARTISTS, SONG_CATALOG } from "@/data/musicCatalog";
 
 type AnalysisResponse = {
   genre_dominant: string;
@@ -154,6 +150,11 @@ export default function Home() {
     setStarted(false);
   }
 
+  function openDashboard() {
+    setStarted(true);
+    setError("");
+  }
+
   if (!started) {
     return (
       <main className="relative flex min-h-screen items-center justify-center p-6">
@@ -171,7 +172,7 @@ export default function Home() {
               scoring energie et des recommandations IA.
             </p>
             <button
-              onClick={analyzeVibe}
+              onClick={openDashboard}
               className="group inline-flex items-center gap-3 rounded-full border border-[#FF6A1A] bg-[#FF6A1A] px-10 py-5 text-lg font-medium text-black shadow-[0_0_0_rgba(255,106,26,0)] transition duration-200 hover:bg-[#ff7a33] hover:shadow-[0_10px_30px_rgba(255,106,26,0.35)] active:bg-[#e65b10]"
             >
               <WandSparkles size={20} />
