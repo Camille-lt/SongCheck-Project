@@ -1,11 +1,9 @@
 # SongCheck!
 <img width="375" height="669" alt="Capture d’écran 2026-04-08 à 18 51 04" src="https://github.com/user-attachments/assets/ec2d18f4-e221-4e33-a2c8-74640dde2b8f" />
+
 <img width="350" height="620" alt="Capture d’écran 2026-04-08 à 15 33 33" src="https://github.com/user-attachments/assets/cb3f7cd4-0230-47d9-abdb-57abab6feb91" />
+
 <img width="349" height="621" alt="Capture d’écran 2026-04-08 à 15 33 41" src="https://github.com/user-attachments/assets/d4a0501b-93b4-402f-89b3-5c57ee8cfafd" />
-
-<img width="350" height="620" alt="Capture d’écran 2026-04-08 à 15 33 33" src="https://github.com/user-attachments/assets/011c9e13-b2db-4a07-a3ec-2b83efff1c20" />
-<img width="349" height="621" alt="Capture d’écran 2026-04-08 à 15 33 41" src="https://github.com/user-attachments/assets/f03c2b65-b4e6-4398-a2ed-0b5e21f939fb" />
-
 
 SongCheck! est mon projet **fullstack** autour de la musique : l'utilisateur construit une liste de morceaux/artistes, puis une IA analyse sa vibe musicale.
 
