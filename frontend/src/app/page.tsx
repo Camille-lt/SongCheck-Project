@@ -180,7 +180,7 @@ export default function Home() {
           </div>
         </div>
         <p className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/45">
-          By - Camille Lebigot
+          © 2026 Camille Lebigot
         </p>
       </main>
     );
@@ -356,7 +356,7 @@ export default function Home() {
           )}
         </section>
       </div>
-      <p className="mt-8 text-center text-xs text-white/45">By - Camille Lebigot</p>
+      <p className="mt-8 text-center text-xs text-white/45">© 2026 Camille Lebigot</p>
     </main>
   );
 }
