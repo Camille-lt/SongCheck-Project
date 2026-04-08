@@ -171,8 +171,11 @@ export default function Home() {
               <Music2 size={14} className="text-[#FF6A1A]" />
               SongCheck Experience
             </div>
-            <h1 className="text-5xl font-semibold tracking-tight text-white md:text-7xl">
-              SongCheck!
+            <h1 className="text-5xl font-semibold tracking-tight md:text-7xl">
+              <span className="text-black [text-shadow:0_0_0_#fff,1px_0_0_#fff,-1px_0_0_#fff,0_1px_0_#fff,0_-1px_0_#fff]">
+                Song
+              </span>
+              <span className="text-[#FF6A1A]">Check!</span>
             </h1>
             <p className="max-w-xl text-sm leading-relaxed text-white/60 md:text-base">
               Identifie instantanement l&apos;ADN musical de ta playlist, avec un
