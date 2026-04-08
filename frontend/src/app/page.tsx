@@ -352,7 +352,8 @@ export default function Home() {
 
           {!loading && !error && !result && (
             <p className="rounded-xl border border-white/10 bg-black/40 p-4 text-sm text-white/70">
-              Lance l&apos;analyse pour voir les jauges orange et recommandations.
+              Lance l&apos;analyse de ta playlist pour découvrir ton genre dominant, ton
+              energy score et des recommandations IA.
             </p>
           )}
         </section>
