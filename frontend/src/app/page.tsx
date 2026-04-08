@@ -88,6 +88,8 @@ const EXTRA_KNOWN_ARTISTS = [
 ];
 
 const ARTIST_DICTIONARY = new Set([...KNOWN_ARTISTS, ...EXTRA_KNOWN_ARTISTS]);
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
 
 export default function Home() {
   const [started, setStarted] = useState(false);
@@ -126,7 +128,7 @@ export default function Home() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
+      const response = await fetch(`${API_BASE_URL}/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ songs }),

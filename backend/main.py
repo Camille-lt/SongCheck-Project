@@ -18,9 +18,14 @@ client = Groq(api_key=groq_api_key)
 
 app = FastAPI(title="SongCheck API")
 
+allowed_origins = [
+    "http://localhost:3000",
+    "https://song-check-project.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
