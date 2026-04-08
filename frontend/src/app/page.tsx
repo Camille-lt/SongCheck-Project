@@ -99,6 +99,14 @@ export default function Home() {
     return `${left} - ${right}`;
   }
 
+  function isValidSongEntry(value: string): boolean {
+    if (!value.includes("-")) return false;
+    const [artistRaw, ...titleParts] = value.split("-");
+    const artist = artistRaw.trim();
+    const title = titleParts.join("-").trim();
+    return artist.length >= 2 && title.length >= 2;
+  }
+
   function addSong(forcedValue?: string) {
     const rawInput = typeof forcedValue === "string" ? forcedValue : songInput;
     const cleaned = rawInput.trim();
@@ -109,6 +117,13 @@ export default function Home() {
     }
 
     const normalized = normalizeSongInput(cleaned);
+    if (!isValidSongEntry(normalized)) {
+      setError(
+        "Entre un artiste et une chanson valides au format: Artiste - Titre.",
+      );
+      return;
+    }
+
     const alreadyExists = songs.some(
       (song) => song.toLowerCase() === normalized.toLowerCase(),
     );
