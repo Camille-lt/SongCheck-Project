@@ -200,8 +200,8 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-8 md:px-8 md:py-12">
-      <div className="mx-auto grid w-full max-w-6xl gap-6 md:grid-cols-[1fr_1.2fr]">
+    <main className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8 md:px-8 md:py-12">
+      <div className="w-full max-w-6xl grid gap-6 md:grid-cols-[1fr_1.2fr]">
         <section className="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-xl">
           <div className="mb-4 flex items-center gap-2 text-xs tracking-[0.18em] text-white/70 uppercase">
             <Music2 size={14} className="text-[#FF6A1A]" />
@@ -376,7 +376,7 @@ export default function Home() {
           )}
         </section>
       </div>
-      <p className="mt-8 text-center text-xs text-white/45">© 2026 Camille Lebigot</p>
+      <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/45">© 2026 Camille Lebigot</p>
     </main>
   );
 }
